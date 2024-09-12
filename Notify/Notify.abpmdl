@@ -1,0 +1,85 @@
+{
+  "template": "app",
+  "imports": {
+    "Volo.Abp.Account": {
+      "version": "8.2.2",
+      "isInstalled": true
+    },
+    "Volo.Abp.OpenIddict": {
+      "version": "8.2.2",
+      "isInstalled": true
+    },
+    "Volo.Abp.Identity": {
+      "version": "8.2.2",
+      "isInstalled": true
+    },
+    "Volo.Abp.TenantManagement": {
+      "version": "8.2.2",
+      "isInstalled": true
+    }
+  },
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "Notify.Application": {
+      "path": "src/Notify.Application/Notify.Application.abppkg",
+      "folder": "src"
+    },
+    "Notify.Application.Tests": {
+      "path": "test/Notify.Application.Tests/Notify.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "Notify.Domain.Shared": {
+      "path": "src/Notify.Domain.Shared/Notify.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "Notify.Application.Contracts": {
+      "path": "src/Notify.Application.Contracts/Notify.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "Notify.HttpApi": {
+      "path": "src/Notify.HttpApi/Notify.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "Notify.HttpApi.Client": {
+      "path": "src/Notify.HttpApi.Client/Notify.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "Notify.EntityFrameworkCore.Tests": {
+      "path": "test/Notify.EntityFrameworkCore.Tests/Notify.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "Notify.EntityFrameworkCore": {
+      "path": "src/Notify.EntityFrameworkCore/Notify.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "Notify.TestBase": {
+      "path": "test/Notify.TestBase/Notify.TestBase.abppkg",
+      "folder": "test"
+    },
+    "Notify.Domain.Tests": {
+      "path": "test/Notify.Domain.Tests/Notify.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "Notify.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/Notify.HttpApi.Client.ConsoleTestApp/Notify.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "Notify.DbMigrator": {
+      "path": "src/Notify.DbMigrator/Notify.DbMigrator.abppkg",
+      "folder": "src"
+    },
+    "Notify.HttpApi.Host": {
+      "path": "src/Notify.HttpApi.Host/Notify.HttpApi.Host.abppkg",
+      "folder": "src"
+    },
+    "Notify.Domain": {
+      "path": "src/Notify.Domain/Notify.Domain.abppkg",
+      "folder": "src"
+    }
+  }
+}
