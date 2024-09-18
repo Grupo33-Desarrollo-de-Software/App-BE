@@ -15,6 +15,7 @@ using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using Notify.Albums;
+using Notify.ListenLists;
 
 namespace Notify.EntityFrameworkCore;
 
@@ -28,6 +29,7 @@ public class NotifyDbContext :
 {
     /* Add DbSet properties for your Aggregate Roots / Entities here. */
     public DbSet<Album> Albums { get; set; }
+    public DbSet<ListenList> ListenLists {  get; set; } 
 
 
     #region Entities from the modules
@@ -77,6 +79,13 @@ public class NotifyDbContext :
             b.Property(x => x.Title).HasMaxLength(128).IsRequired();
 // por lo que entendi puede ir una b.property para cada uno de los atributos, serian restricciones e la bdd
         });
+
+        builder.Entity<ListenList>(b =>
+        {
+            b.ToTable(NotifyConsts.DbTablePrefix + "ListenList", NotifyConsts.DbSchema);
+            b.ConfigureByConvention();
+        });
+
         builder.ConfigurePermissionManagement();
         builder.ConfigureSettingManagement();
         builder.ConfigureBackgroundJobs();
