@@ -75,7 +75,13 @@ public class NotifyDbContext :
             b.ToTable(NotifyConsts.DbTablePrefix + "Albums",NotifyConsts.DbSchema);
             b.ConfigureByConvention();
             b.Property(x => x.Title).HasMaxLength(128).IsRequired();
-// por lo que entendi puede ir una b.property para cada uno de los atributos, serian restricciones e la bdd
+            b.Property(x => x.Genre).IsRequired();
+            b.Property(x => x.releaseDate).IsRequired(); // agregar despues que haga la conversion
+            b.Property(x => x.length).IsRequired();
+            b.Property(x => x.country).HasMaxLength(50).IsRequired();
+            b.Property(x => x.released).IsRequired();
+            b.Property(x => x.playCount).IsRequired();
+            // por lo que entendi puede ir una b.property para cada uno de los atributos, serian restricciones e la bdd
         });
         builder.ConfigurePermissionManagement();
         builder.ConfigureSettingManagement();
