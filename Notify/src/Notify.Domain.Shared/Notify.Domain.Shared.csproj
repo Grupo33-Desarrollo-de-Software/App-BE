@@ -33,5 +33,5 @@
     <EmbeddedResource Include="Localization\Notify\*.json" />
     <Content Remove="Localization\Notify\*.json" />
   </ItemGroup>
-
+	<!-- van a estar las cosas que se pueden compartir con otros proyectos/apps, aca van los DTO-->
 </Project>
