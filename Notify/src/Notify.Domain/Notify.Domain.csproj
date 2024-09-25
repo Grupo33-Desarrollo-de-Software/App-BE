@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Notify.Application.Contracts\Notify.Application.Contracts.csproj" />
     <ProjectReference Include="..\Notify.Domain.Shared\Notify.Domain.Shared.csproj" />
   </ItemGroup>
 

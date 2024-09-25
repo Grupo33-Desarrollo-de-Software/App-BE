@@ -9,7 +9,22 @@ namespace Notify.Albums
 {
     public class Album : AggregateRoot<int>
     {
-        public string Title { get; set; }
         // aca tienen que ir todos los atributos
+        public string Title { get; set; }
+
+        public TypeGenre Genre { get; set; }
+
+        public DateTime releaseDate{ get; set; } // esto nos devuelve con la hora, cosa que no nos interesa, cambiar
+
+        public TimeSpan length{ get; set; }
+       
+        public string country {  get; set;}
+      
+        public bool released   { get; set; }
+
+        public uint playCount { get; set; }
+        // ver lo de la tapa del album
+        // ver lo de agregar rating, ya que lleva la review
+
     }
 }
