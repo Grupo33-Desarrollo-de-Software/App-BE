@@ -10,6 +10,12 @@ namespace Notify.Albums
     public class AlbumDto : EntityDto<int>
     {
         public string Title { get; set; }
+        public TypeGenre Genre { get; set; }
+        public DateTime releaseDate { get; set; }
+        public TimeSpan length { get; set; }
+        public string country { get; set; }
+        public bool released { get; set; }
+        public uint playCount { get; set; }
     }
 }
 // se utilizan para devolverle informacion al frontend de Album (entidad de dominio) o viceversa

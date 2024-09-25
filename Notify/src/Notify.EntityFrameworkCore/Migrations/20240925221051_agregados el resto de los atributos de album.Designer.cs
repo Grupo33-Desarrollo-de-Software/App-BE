@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Notify.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
@@ -12,9 +13,11 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Notify.Migrations
 {
     [DbContext(typeof(NotifyDbContext))]
-    partial class NotifyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240925221051_agregados el resto de los atributos de album")]
+    partial class agregadoselrestodelosatributosdealbum
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,11 +47,7 @@ namespace Notify.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ExtraProperties");
 
-
-                    b.Property<int?>("ListenListId")
-
                     b.Property<int>("Genre")
-
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
@@ -75,34 +74,7 @@ namespace Notify.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ListenListId");
-
                     b.ToTable("AppAlbums", (string)null);
-                });
-
-            modelBuilder.Entity("Notify.ListenLists.ListenList", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .IsRequired()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)")
-                        .HasColumnName("ConcurrencyStamp");
-
-                    b.Property<string>("ExtraProperties")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("ExtraProperties");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("AppListenList", (string)null);
                 });
 
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLog", b =>
@@ -1978,13 +1950,6 @@ namespace Notify.Migrations
                     b.ToTable("AbpTenantConnectionStrings", (string)null);
                 });
 
-            modelBuilder.Entity("Notify.Albums.Album", b =>
-                {
-                    b.HasOne("Notify.ListenLists.ListenList", null)
-                        .WithMany("Albums")
-                        .HasForeignKey("ListenListId");
-                });
-
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLogAction", b =>
                 {
                     b.HasOne("Volo.Abp.AuditLogging.AuditLog", null)
@@ -2134,11 +2099,6 @@ namespace Notify.Migrations
                         .HasForeignKey("TenantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Notify.ListenLists.ListenList", b =>
-                {
-                    b.Navigation("Albums");
                 });
 
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLog", b =>
